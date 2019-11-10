@@ -1,0 +1,7 @@
+{
+  "getIpUrl" : "https://api.ipify.org",
+  "gist" : {
+    "id": "***",
+    "accessToken" : "***"
+  }
+}
