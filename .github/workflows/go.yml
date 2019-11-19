@@ -29,13 +29,16 @@ jobs:
             dep ensure
         fi
 
-    - name: Build
-      run: go build -v .
+    - name: Build (linux-amd64)
+      run: GOOS=linux GOARCH=amd64 go build -v .
+
+    - name: Build (win-amd64)
+      run: GOOS=windows GOARCH=amd64 go build -v .
       
     - name: Action Release
-      uses: yakuhzi/action-release@v1.2.0
+      uses: softprops/action-gh-release@v0.1.0
+      if: startsWith(github.ref, 'refs/tags/')
       with:
-        # File to upload to the release
-        file: publish-ip
+        files: publish-ip,publish-ip.exe
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
