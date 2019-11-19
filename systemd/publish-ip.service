@@ -1,0 +1,12 @@
+[Unit]
+Description=publish-ip
+After=network.target network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/publish-ip
+ExecStart=/opt/publish-ip/publish-ip
+
+[Install]
+WantedBy=multi-user.target

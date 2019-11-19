@@ -1,0 +1,12 @@
+[Unit]
+Description=publish-ip (timer)
+After=network.target network-online.target
+Wants=network-online.target
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=10min
+Unit=publish-ip.service
+
+[Install]
+WantedBy=multi-user.target
