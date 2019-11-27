@@ -1,12 +1,12 @@
 [Unit]
-Description=publish-ip (timer)
+Description=ip2gist
 After=network.target network-online.target
 Wants=network-online.target
 
-[Timer]
-OnBootSec=1min
-OnUnitActiveSec=10min
-Unit=publish-ip.service
+[Service]
+Type=simple
+WorkingDirectory=/opt/ip2gist
+ExecStart=/opt/ip2gist/ip2gist
 
 [Install]
 WantedBy=multi-user.target

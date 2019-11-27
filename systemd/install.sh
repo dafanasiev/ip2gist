@@ -1,9 +1,9 @@
 #!/bin/sh
 
-cp publish-ip.timer /etc/systemd/system
-cp publish-ip.service /etc/systemd/system
+cp ip2gist.timer /etc/systemd/system
+cp ip2gist.service /etc/systemd/system
 
 systemctl daemon-reload
 
-systemctl enable ublish-ip.service
-systemctl enable publish-ip.timer
+systemctl enable ip2gist.service
+systemctl enable ip2gist.timer
