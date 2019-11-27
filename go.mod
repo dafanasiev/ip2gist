@@ -1,4 +1,4 @@
-module publish-ip
+module ip2gist
 
 go 1.13
 
